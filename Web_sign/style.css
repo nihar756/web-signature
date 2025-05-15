@@ -1,0 +1,70 @@
+body {
+  background-color: rgb(244, 242, 242);
+}
+.main {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.canvas {
+  border: 2px solid rgb(44, 31, 31);
+}
+.top,
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0 20px 0;
+}
+.block,
+input,
+select,
+button {
+  width: 80%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.bottom button {
+  margin: 10px;
+  height: 30px;
+  border-radius: 7px;
+}
+.top .block {
+  margin: 10px;
+}
+.block > p {
+  margin: 10px auto;
+  width: 50%;
+}
+.welcome {
+  font-size: 30px;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.canvas {
+  border: 3px solid rgb(128, 126, 126);
+  border-radius: 10px;
+  box-shadow: 5px 5px rgb(128, 117, 117);
+}
+@media (max-width: 600px) {
+  .main,
+  .top,
+  .canvas,
+  .bottom {
+    width: 370px;
+  }
+  .welcome {
+    width: 360px;
+    font-size: 10px;
+    height: 150px;
+    bottom: 15%;
+  }
+  .bottom button {
+    height: 40px;
+  }
+}
