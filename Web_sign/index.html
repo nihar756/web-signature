@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-Signature</title>
+    <title>eSignature</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="sign-icon.png">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="welcome">
-        <h1 style="color:cadetblue;">WELCOME to web-sign</h1>
+    <div id="bg-animation"></div>
+    
+    <div class="container">
+        <h1 id="typing-heading"><span id="typed-text"></span><span class="cursor">|</span></h1>
         
-    </div>
-    <div class="main">
-       
-        <div class="top">
-            <div class="block">
-                <p style="color: rgb(23, 21, 21);">color</p>
-                <input type="color" class="form-control" id="colorPicker">
+        <div class="signature-area">
+            <canvas id="myCanvas" width="1000" height="270"></canvas>
+        </div>
+        
+        <div class="controls">
+            <div class="color-picker">
+                <div class="color-circle"></div>
+                <span class="color-hex">#000000</span>
+                <input type="color" id="colorPicker" value="#000000">
             </div>
-            <div class="block">
-                <p style="color: rgb(33, 32, 32);">Background</p>
-                <input type="color" class="form-control" id="canvasColor">
+            
+            <div class="slider-control">
+                <label>Width</label>
+                <div class="slider-container">
+                    <input type="range" id="widthSlider" min="1" max="20" value="5">
+                </div>
             </div>
-            <div class="block">
-                <p style="color: rgb(36, 35, 35);">Font</p>
-                <select class="custom-select" type="select" id="fontsizepicker">
-                    <option value="5">5px</option>
-                    <option value="10">10px</option>
-                    <option value="20">20px</option>
-                    <option value="30">30px</option>
-                    <option value="40">40px</option>
-                    <option value="50">50px</option>
-                </select>
+            
+            <div class="slider-control">
+                <label>Angle</label>
+                <div class="slider-container">
+                    <input type="range" id="angleSlider" min="0" max="360" value="0">
+                </div>
             </div>
         </div>
-        <canvas class="canvas" id="myCanvas" width="800" height="500"></canvas>
-        <div class="bottom">
-            <button type="button" class="btn btn-danger" id="clearButton" style="background-color: crimson; color: white;">Clear</button>
-            <button type="button" class="btn btn-success" id="saveButton" style="background-color: rgb(30, 190, 30);color: white;">Save & download</button>
-            <button type="button" class="btn btn-warning" id="retrieveButton" style="background-color: cadetblue;color: white;">Retrieve saved sign</button>
+        
+        <div class="buttons">
+            <button id="clearButton" class="btn-clear">Clear and draw again</button>
+            <button id="saveButton" class="btn-download">Download eSignature</button>
         </div>
     </div>
-    <script src="script.js">
-        
-    </script>
+    
+    <script src="script.js"></script>
+    <script src="background.js"></script>
+    <script src="typing-effect.js"></script>
 </body>
 </html>
